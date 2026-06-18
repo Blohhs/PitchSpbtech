@@ -7,7 +7,7 @@ const Form = ({ localData, handleChange, handleGenerate, handleClear, errors }) 
       <input name="projectName" value={localData.projectName} onChange={handleChange} className={errors.projectName ? 'error-input' : ''} />
       {errors.projectName && <span className="error-text">{errors.projectName}</span>}
 
-      <label>Для кого (целевая аудитория)</label>
+      <label>Целевая аудитория</label>
       <input name="targetAudience" value={localData.targetAudience} onChange={handleChange} className={errors.targetAudience ? 'error-input' : ''} />
       {errors.targetAudience && <span className="error-text">{errors.targetAudience}</span>}
 
@@ -19,7 +19,7 @@ const Form = ({ localData, handleChange, handleGenerate, handleClear, errors }) 
       <textarea name="solution" value={localData.solution} onChange={handleChange} className={errors.solution ? 'error-input' : ''} />
       {errors.solution && <span className="error-text">{errors.solution}</span>}
 
-      <label>Результат/доказательство</label>
+      <label>Результат</label>
       <textarea name="result" value={localData.result} onChange={handleChange} />
 
       <label>Запрос</label>

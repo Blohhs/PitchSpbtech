@@ -132,3 +132,13 @@ button:hover {
   color: #007bff;
   text-decoration: none;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  .main-grid {
+    gap: 15px;
+  }
+}
