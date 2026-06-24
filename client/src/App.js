@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
 import PitchResults from './components/PitchResults';
-import Advice from './components/Advice';
 import { generatePitches } from './utils/generator';
+import logo from './assets/LogoFull.svg';
 import './App.css';
 
 const emptyData = { projectName: '', targetAudience: '', problem: '', solution: '', result: '', goal: '' };
@@ -33,10 +33,10 @@ function App() {
 
   const handleGenerate = () => {
     const newErrors = {};
-    if (formData.projectName.length < 2 || formData.projectName.length > 60) newErrors.projectName = 'От 2 до 60 символов';
-    if (formData.targetAudience.length < 5 || formData.targetAudience.length > 120) newErrors.targetAudience = 'От 5 до 120 символов';
-    if (formData.problem.length < 20 || formData.problem.length > 300) newErrors.problem = 'От 20 до 300 символов';
-    if (formData.solution.length < 20 || formData.solution.length > 300) newErrors.solution = 'От 20 до 300 символов';
+    if (formData.projectName.length < 2) newErrors.projectName = 'Минимум 2 символа';
+    if (formData.targetAudience.length < 5) newErrors.targetAudience = 'Минимум 5 символов';
+    if (formData.problem.length < 10) newErrors.problem = 'Минимум 10 символов';
+    if (formData.solution.length < 10) newErrors.solution = 'Минимум 10 символов';
     if (formData.goal.length === 0) newErrors.goal = 'Запрос обязателен';
 
     if (Object.keys(newErrors).length > 0) {
@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <img src={logo} alt="Logo" className="page-logo" />
       <h1>Генератор питчей</h1>
       <div className="main-grid">
         <div className="form-column">
@@ -56,10 +57,7 @@ function App() {
         </div>
         <div className="results-column">
           {results ? (
-            <>
-              <PitchResults results={results} />
-              <Advice data={formData} />
-            </>
+            <PitchResults results={results} />
           ) : (
             <div className="pitch-card">Заполните форму, чтобы увидеть результат.</div>
           )}

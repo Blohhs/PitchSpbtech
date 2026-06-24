@@ -13,6 +13,16 @@ body {
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  padding-top: 40px;
+}
+
+.page-logo {
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 120px;
+  height: auto;
 }
 
 h1 {
@@ -41,7 +51,7 @@ h1 {
   min-width: 0;
 }
 
-.pitch-form, .pitch-card, .advice-container {
+.pitch-form, .pitch-card {
   background: #1e1e1e;
   padding: 20px;
   border-radius: 8px;
@@ -108,36 +118,10 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.advice-container h3 {
-  margin-top: 0;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
-}
-
-.advice-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.advice-container li {
-  margin-bottom: 8px;
-  padding: 8px;
-  background-color: #252525;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.advice-container a {
-  color: #007bff;
-  text-decoration: none;
-}
-
 @media (max-width: 600px) {
   body {
     padding: 10px;
   }
-  
   .main-grid {
     gap: 15px;
   }
